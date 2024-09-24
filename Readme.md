@@ -1,17 +1,26 @@
-# 100 Days of Go Challenge 🚀
-
-Welcome to my **100 Days of Go** challenge! 🎉
+># 100 Days of Go Challenge 🚀
 
 ## About the Challenge
-For the next 100 days, I'll be learning Go by following the [Go Developer Roadmap](https://roadmap.sh/golang). Each day, I will focus on a new concept, share my learnings, and build projects to solidify my understanding.
+I’m learning Go using the [official Go documentation](https://golang.org/doc) and following the [Go Developer Roadmap](https://roadmap.sh/golang). Each day, I’ll dive into new concepts, practice coding, and share my learnings.
 
-## Progress
+## Go Developer Roadmap
+The [Go Developer Roadmap](https://roadmap.sh/golang) outlines essential topics like Go basics, concurrency, web development, testing, and dependency management to help developers master Go efficiently.
 
-- [x] **Day 1**: Go Basics - Setting up, Go CLI, Workspace
-- [ ] **Day 2**: Variables, Types, Constants
-- [ ] **Day 3**: Arrays, Slices, and Structs
+## Topics Covered
+- Introduction to Go
+- Installing Go and Setting Up
+- Go CLI Basics
+- Variables and Data Types in Go
+- Loops and Conditions
+- Functions in Go
+- Arrays and Slices
+- Structs and Methods
+- Maps in Go
+- Goroutines and Concurrency
+- Error Handling in Go
+- Testing in Go
 
 ## How to Follow
-You can track my daily progress here, where I'll update this README and share code and projects.
+I will update this repository daily with my progress and projects. You can also follow my journey on [Medium](https://medium.com/), where I’ll share detailed write-ups on each topic.
 
-Let's Go! 💻🔥
+Let’s Go! 💻🔥
