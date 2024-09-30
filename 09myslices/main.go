@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func main() {
 	fmt.Println("Welcome to Slices")
@@ -13,4 +16,25 @@ func main() {
 
 	fruitList = append(fruitList[1:3])
 	fmt.Println(fruitList)
+
+	highScores := make([]int, 4)
+
+	highScores[0] = 123
+	highScores[1] = 456
+	highScores[2] = 789
+	highScores[3] = 109
+
+	highScores = append(highScores, 443, 343, 432)
+
+	fmt.Println(highScores)
+
+	fmt.Print(sort.IntsAreSorted(highScores))
+
+
+	sort.Ints(highScores)
+
+	fmt.Println("Sorted: ",highScores)
+
+	fmt.Print(sort.IntsAreSorted(highScores))
+
 }
