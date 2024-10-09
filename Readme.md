@@ -21,6 +21,6 @@ The [Go Developer Roadmap](https://roadmap.sh/golang) outlines essential topics 
 - Testing in Go
 
 ## How to Follow
-I will update this repository daily with my progress and projects. You can also follow my journey on [Medium](https://medium.com/), where I’ll share detailed write-ups on each topic.
+I will update this repository daily with my progress and projects. You can also follow my journey on [Medium](https://medium.com/@blitzbugg), where I’ll share detailed write-ups on each topic.
 
 Let’s Go! 💻🔥
