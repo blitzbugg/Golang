@@ -9,7 +9,8 @@ import (
 
 func main() {
 	fmt.Println("Web verb")
-	PerformGetRequest()
+	// PerformGetRequest()
+	performPostJsonRequest()
 }
 
 func PerformGetRequest() {
@@ -34,4 +35,29 @@ func PerformGetRequest() {
 	
 	// fmt.Println(content)
 	// fmt.Println(string(content))
+}
+
+func performPostJsonRequest()  {
+	const myurl = "http://localhost:3000/post"
+
+	// Fake json playload
+
+	requestBody := strings.NewReader(`
+		{
+	"coursename": "ReactJS",
+	"price": "0",
+	"platform": "react.dev"
+	}
+	`)
+
+	response, err := http.Post(myurl, "application/json", requestBody)
+
+	if err != nil {
+		panic(err)
+	}
+	defer response.Body.Close()
+
+	content, _ := ioutil.ReadAll(response.Body)
+
+	fmt.Println(string(content))
 }
