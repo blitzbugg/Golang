@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+
+	"github.com/gorilla/mux"
 )
 
 // Model for course - file
@@ -41,5 +43,23 @@ func serveHome(w http.ResponseWriter, r *http.Request) {
 func getAllCourses(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Get all courses")
 	w.Header().Set("Content-type", "application/json")
-	json.NewEncoder().Encode(courses)
+	json.NewEncoder(w).Encode(courses)
+}
+
+func getOneCourse(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Get one course")
+	w.Header().Set("Content-type", "application/json")
+
+	// Grab id from request
+	params := mux.Vars(r)
+	fmt.Printf("Type of %v is %T", params, params)
+
+	for _, course := range courses {
+		if course.COurseId == params["id"] {
+			json.NewEncoder(w).Encode(course.Author)
+			return
+		}
+		json.NewEncoder(w).Encode("No course id with give id")
+		return
+	}
 }
