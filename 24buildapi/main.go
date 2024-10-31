@@ -41,6 +41,7 @@ func main() {
 	r.HandleFunc("/courses", getAllCourses).Methods("GET")
 	r.HandleFunc("/courses/{id}", getOneCourse).Methods("GET")
 	r.HandleFunc("/courses", createOneCourse).Methods("POST")
+	r.HandleFunc("/couses", updateOneCourse).Methods("POST")
 
 	// Start server
 	fmt.Println("Server is running on port 8000...")
@@ -98,4 +99,28 @@ func createOneCourse(w http.ResponseWriter, r *http.Request) {
 	course.COurseId = strconv.Itoa(rand.Intn(100))
 	courses = append(courses, course)
 	json.NewEncoder(w).Encode(course)
+}
+
+func updateOneCourse(w http.ResponseWriter, r *http.Request)  {
+	fmt.Println("Create one course")
+	w.Header().Set("Content-type", "application/json")
+
+	// first grap id from req
+	params := mux.Vars(r)
+
+	//loop, id, remove, add with my ID
+
+	for index, course := range courses {
+		if course.COurseId == params["id"] {
+			courses = append(courses[:index], courses[index+1:]...)
+			var course Course
+			_ = json.NewDecoder(r.Body).Decode(&course)
+			course.COurseId = params["id"]
+			courses = append(courses, course)
+			json.NewEncoder(w).Encode(course)
+			return
+		}
+	}
+
+
 }
